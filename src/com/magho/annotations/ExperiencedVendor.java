@@ -2,7 +2,7 @@ package com.magho.annotations;
 
 import org.springframework.stereotype.Component;
 
-@Component("ExperiencedVendor")
+@Component
 public class ExperiencedVendor implements Employee{
     @Override
     public String getTasks() {

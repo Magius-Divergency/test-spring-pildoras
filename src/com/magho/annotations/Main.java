@@ -9,7 +9,7 @@ public class Main {
         ClassPathXmlApplicationContext context =
                 new ClassPathXmlApplicationContext("applicationContext.xml");
 
-        Employee juan = context.getBean("ExperiencedVendor", Employee.class);
+        Employee juan = context.getBean("experiencedVendor", Employee.class);
 
         System.out.println(juan.getTasks());
         System.out.println(juan.getReport());
