@@ -8,10 +8,8 @@ public class ExperiencedVendor implements Employee{
 
     private ICommercialReport report;
 
-    // spring con autowired comprueba el proyecto para ver si hay alguna clase que implemente la interfaz y de esa clase
-    // obtiene la inyección de dependencia
     @Autowired
-    public ExperiencedVendor(ICommercialReport report) {
+    public void setReport(ICommercialReport report) {
         this.report = report;
     }
 
