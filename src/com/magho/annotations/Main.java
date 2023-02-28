@@ -10,9 +10,15 @@ public class Main {
                 new ClassPathXmlApplicationContext("applicationContext.xml");
 
         Employee juan = context.getBean("experiencedVendor", Employee.class);
+        Employee paco = context.getBean("experiencedVendor", Employee.class);
 
-        System.out.println(juan.getTasks());
-        System.out.println(juan.getReport());
+        // muestran la misma dirección porque spring por defecto usa singleton
+        System.out.println(juan);
+        System.out.println(paco);
+
+        if(paco == juan) {
+            System.out.println("It's the same object");
+        }
 
         context.close();
     }
