@@ -13,12 +13,8 @@ public class Main {
         Employee paco = context.getBean("experiencedVendor", Employee.class);
 
         // muestran la misma dirección porque spring por defecto usa singleton
-        System.out.println(juan);
-        System.out.println(paco);
-
-        if(paco == juan) {
-            System.out.println("It's the same object");
-        }
+        System.out.println(juan.getTasks());
+        System.out.println(juan.getReport());
 
         context.close();
     }

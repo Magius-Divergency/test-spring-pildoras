@@ -1,19 +1,30 @@
 package com.magho.annotations;
 
+import org.springframework.beans.factory.DisposableBean;
+import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 @Component
-@Scope("prototype")
-public class ExperiencedVendor implements Employee{
+public class ExperiencedVendor implements Employee, InitializingBean, DisposableBean {
 
-    // como tenemos dos componentes que implementan la interfaz, debemos añadir la etiqueta qualifier para definir
-    // cual es el bean que debe inyectar
     @Autowired
     @Qualifier("detailedCommercialReport")
     private ICommercialReport report;
+
+    // ejecutado antes de la destrucción del bean
+    @Override
+    public void destroy() throws Exception {
+        System.out.println("Executed before bean destruction.");
+    }
+
+    // ejecutado tras la creación del bean
+    @Override
+    public void afterPropertiesSet() throws Exception {
+        System.out.println("Executed after bean creation.");
+    }
 
     @Override
     public String getTasks() {
@@ -24,4 +35,6 @@ public class ExperiencedVendor implements Employee{
     public String getReport() {
         return report.getCommercialReport();
     }
+
+
 }
