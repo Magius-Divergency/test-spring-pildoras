@@ -8,18 +8,7 @@
     http://www.springframework.org/schema/context 
     http://www.springframework.org/schema/context/spring-context-3.1.xsd
 ">
-<context:property-placeholder location="classpath:datosEmpresa.propiedades"></context:property-placeholder>
-<bean id="informe" class="com.magho.testIoC.Informe"></bean>
-
-<bean id="miEmpleado" class="com.magho.testIoC.DirectorEmpleado">
-    <constructor-arg ref="informe"></constructor-arg>
-    <property name="email" value="${email}"></property>
-    <property name="nombreEmpresa" value="${nombreEmpresa}"></property>
-</bean>
-<bean id="secretarioEmpleado" class="com.magho.testIoC.SecretarioEmpleado">
-    <property name="informe" ref="informe"></property>
-    <property name="email" value="secretaria@gmail.com"></property>
-    <property name="nombreEmpresa" value="Magius S.L."></property>
-</bean>
+    <!-- Añadido para que spring escanee las clases buscando anotaciones -->
+    <context:component-scan base-package="com.magho.annotations"></context:component-scan>
 
 </beans>
