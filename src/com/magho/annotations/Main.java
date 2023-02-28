@@ -7,14 +7,12 @@ public class Main {
 
     public static void main(String[] args) {
 
-        // cambiar el contexto para que lo tome de la clase de configuración
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
 
-        Employee juan = context.getBean("experiencedVendor", Employee.class);
-        Employee paco = context.getBean("experiencedVendor", Employee.class);
+        Employee empleado = context.getBean("chiefFinancialOfficer", Employee.class);
 
-        System.out.println(juan.getTasks());
-        System.out.println(juan.getReport());
+        System.out.println(empleado.getTasks());
+        System.out.println(empleado.getReport());
 
         context.close();
     }
