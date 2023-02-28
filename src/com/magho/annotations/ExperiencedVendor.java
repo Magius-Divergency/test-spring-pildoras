@@ -6,12 +6,8 @@ import org.springframework.stereotype.Component;
 @Component
 public class ExperiencedVendor implements Employee{
 
-    private ICommercialReport report;
-
     @Autowired
-    public void createReport(ICommercialReport report) {
-        this.report = report;
-    }
+    private ICommercialReport report;
 
     @Override
     public String getTasks() {
