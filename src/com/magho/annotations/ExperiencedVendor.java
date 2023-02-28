@@ -9,7 +9,7 @@ public class ExperiencedVendor implements Employee{
     private ICommercialReport report;
 
     @Autowired
-    public void setReport(ICommercialReport report) {
+    public void createReport(ICommercialReport report) {
         this.report = report;
     }
 
