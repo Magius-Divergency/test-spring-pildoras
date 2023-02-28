@@ -7,13 +7,12 @@ public class SigletonPrototypeDemo {
     public static void main(String[] args) {
 
         ClassPathXmlApplicationContext context =
-                new ClassPathXmlApplicationContext("applicationContext.xml");
+                new ClassPathXmlApplicationContext("applicationContextPrototype.xml");
 
         SecretarioEmpleado Paco = context.getBean("secretarioEmpleado", SecretarioEmpleado.class);
         SecretarioEmpleado Pedro = context.getBean("secretarioEmpleado", SecretarioEmpleado.class);
 
-        // comprobamos que como por defecto spring usa el patron singleton, ambos objetos apuntan a la misma direccion
-        // de memoria
+        // como hemos modificado el scope, los objetos ya no apuntan a la misma dirección de memoria
         System.out.println(Paco);
         System.out.println(Pedro);
 

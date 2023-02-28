@@ -11,7 +11,7 @@
 
 <bean id="informe" class="com.magho.testIoC.Informe"></bean>
 
-<bean id="secretarioEmpleado" class="com.magho.testIoC.SecretarioEmpleado">
+<bean id="secretarioEmpleado" class="com.magho.testIoC.SecretarioEmpleado" scope="prototype">
     <property name="informe" ref="informe"></property>
 </bean>
 
