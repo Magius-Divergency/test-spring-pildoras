@@ -5,7 +5,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-@ComponentScan("com.magho.annotations")
+//@ComponentScan("com.magho.annotations")
 public class AppConfig {
 
     //define el bean para shopping commercial report
